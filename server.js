@@ -24,6 +24,13 @@ app.use('/api/auth', authRoutes);
 // Catalogue routes for US02
 app.use('/api/books', bookRoutes);
 
+app.get('/api/student', (req, res) => {
+    res.json({
+        name: "Merrick Zivan Malong",
+        studentId: "226495017" 
+    });
+});
+
 mongoose.connect(process.env.MONGODB_URI)
     .then(() => {
         console.log('Connected to MongoDB');
